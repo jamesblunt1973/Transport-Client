@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Transport-Client"
+    }
+  },
+  "defaultProject": "Transport-Client",
+  "cli": {
+    "analytics": "e8f98cda-9690-46aa-adc5-77f2a8f97d57"
+  }
 }
