@@ -7,7 +7,7 @@ import { CompaniesComponent } from './home/companies/companies.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule),
     // component:CompaniesComponent,
     pathMatch: 'full'
 
