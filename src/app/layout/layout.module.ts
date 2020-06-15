@@ -3,8 +3,19 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from '../core/auth.guard';
 import { Routes, RouterModule } from '@angular/router';
 import { ContainerComponent } from '../layout/container/container.component';
-import { from } from 'rxjs';
 import { SharedModule } from '../shared/shared.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
+
+@NgModule({
+  declarations: [SidebarComponent],
+  imports: [CommonModule,
+    SharedModule,
+    RouterModule],
+  exports: [],
+  providers: [],
+})
+export class FeatureModule { }
 
 const routes: Routes = [
   {
@@ -16,18 +27,7 @@ const routes: Routes = [
         canLoad: [AuthGuard]
       },
       {
-        path: 'user',
-        loadChildren: () => import('../users/users.module').then(m => m.UsersModule),
-        canLoad: [AuthGuard]
-      },
-      {
-        path: 'regions',
-        loadChildren: () => import('../regions/regions.module').then(m => m.RegionsModule),
-        canLoad: [AuthGuard]
-      },
-      {
         path: '',
-        pathMatch: 'full',
         redirectTo: '/home'
       }
     ]

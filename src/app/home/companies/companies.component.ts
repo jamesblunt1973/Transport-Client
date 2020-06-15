@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ICompany } from 'src/app/shared/models/test.models';
+
+
 // import { MatDialog } from '@angular/material/dialog';
 // import { Subscription } from 'rxjs';
 // import { DataService } from '../../core/data.service';
 // import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 // import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
-// import { ICompany} from '../../shared/models/test.models';
 
 
 
@@ -20,4 +22,9 @@ export class CompaniesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  companies :ICompany[] = [];
+
+  selectCompany(company:ICompany){
+    
+  }
 }

@@ -11,6 +11,7 @@ const routes: Routes = [
 ]
 @NgModule({
   declarations: [CompaniesComponent, CompanyComponent],
+  exports :[CompaniesComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
