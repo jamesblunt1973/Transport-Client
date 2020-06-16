@@ -5,17 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContainerComponent } from '../layout/container/container.component';
 import { SharedModule } from '../shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { HeaderComponent } from './header/header.component';
 
-
-@NgModule({
-  declarations: [SidebarComponent],
-  imports: [CommonModule,
-    SharedModule,
-    RouterModule],
-  exports: [],
-  providers: [],
-})
-export class FeatureModule { }
 
 const routes: Routes = [
   {
@@ -32,16 +23,16 @@ const routes: Routes = [
       }
     ]
   }
-]
-
+];
 
 @NgModule({
-  declarations: [ContainerComponent],
-  imports: [
-    CommonModule,
+  declarations: [SidebarComponent, ContainerComponent, HeaderComponent],
+  imports: [CommonModule,
     SharedModule,
     RouterModule.forChild(routes)
-
-  ]
+  ],
+  exports: [],
+  providers: [],
 })
+
 export class LayoutModule { }

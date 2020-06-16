@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { menuItem } from './menuItem.model';
-import { UiServiceService} from '../../core/ui-service.service';
+import { UiServiceService } from '../../core/ui-service.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,22 +15,22 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.menuItem = [{
       icon: 'business',
-      title: 'Manage Companies',
+      title: 'مدیریت شرکت ها',
       url: '/home'
     },
     {
       icon: 'supervisor_account',
-      title: 'Manage Owners',
+      title: 'مدیریت مالکان',
       url: '/users'
     },
     {
-      icon: 'languege',
-      title: 'Manage Countries and Cities',
+      icon: 'language',
+      title: 'مدیریت شهرها و کشورها',
       url: '/regions'
     }];
   }
 
-  collapseSidebar(){
+  collapseSidebar() {
     this.UiSevice.changeSidebarStatus()
   }
 

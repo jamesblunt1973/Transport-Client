@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<div fxLayout="column" class="container">
+    <header>
+        <app-header></app-header>
+    </header>
+    <main fxLayout="column" fxFlex="1">
+        <mat-drawer-container fxFlex="1" (backdropClick)="onSidebarClosing()">
+            <mat-drawer>
+                <app-sidebar>
+                </app-sidebar>
+            </mat-drawer>
+            <mat-drawer-content>
+                <main class="content">
+                    <router-outlet></router-outlet>
+                </main>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </main>
+    <footer>
+
+    </footer>
+</div>

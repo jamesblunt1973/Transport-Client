@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiServiceService } from '../../core/ui-service.service';
 
 @Component({
   selector: 'app-container',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private UiService: UiServiceService) { }
+  sidebarStatus = false;
+  ngOnInit() {
+    this.UiService.getMessage().subscribe(status => {
+      this.sidebarStatus = status === 'open'
+    });
   }
-
+  onSidebarClosing() {
+    this.UiService.changeSidebarStatus();
+  }
 }
